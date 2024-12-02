@@ -39,6 +39,16 @@ type LoggingRepository interface {
 	GetAll() ([]models.Logging, error)
 }
 
+//Untuk mengimplementasikan Semua yang ada di dalam interface
+// Sebuah shortcut untuk membuat semua function Create, Delete, Update, dll
+
+/*
+
+func New`_NAMAFUNCTION` (`ISI STRUCT`) `NAMA_INTERFACE` {
+	return &`NAMA STRUCT`{`NAMA VARIABEL STRUCT: NAMA_VARIABEL_PARAMETER`}
+}
+
+*/
 func NewLoggingRepository(Conn *gorm.DB) LoggingRepository {
 	return &dbLogging{Conn: Conn}
 }
